@@ -1,6 +1,6 @@
 <App />
   <Main userType view/>
-    //userType retrieved from DB on login based on user's level of admin privileges: admin, consultant, student;
+    //userType is a string, retrieved from DB on login based on user's level of admin privileges: admin, consultant, student;
       //used to determine which views a user has access to.
     //view is a string used to determine which view to render beneath the nav bar; defaults to 'home', changes when a nav button is selected
     <NavBar userType location view updateView/>
@@ -9,7 +9,6 @@
       //updateView is a function passed down from Main, to be passed down as a click handler for the Icon components.
         //when an icon is clicked, updateView updates 'view' in the Main component to the corresponding view.
       <HomeIcon updateView/>
-        //updateView is a function passed down
       {
         (userType === 'admin')
       ? <SearchIcon updateView/>
@@ -44,7 +43,12 @@
 
       //if view === 'search' render:
       <Search/>
+        <SearchResults input/>
+         //input is a string representing the contents of the search bar.  If input is not null,
+           //SearchResults renders a dropdown of Result components matching the search input.
+
       //if view === 'inbox' render:
       <Inbox/>
+
       //if view === 'notifications' render:
       <Notifications/>
