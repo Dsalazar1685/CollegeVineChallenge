@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  align-items: center;
+  border: 5px solid black;
+  width: 200px;
+  height: 200px;
+}
+
+.counter.greenCounter {
+  background: green;
+}
+
+.counter.blueCounter {
+  background: blue;
+}
+
+.counter.circleCounter {
+  border-radius: 50%;
+  box-shadow: 10px 5px 5px black;
+}
