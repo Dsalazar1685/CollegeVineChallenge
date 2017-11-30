@@ -4,7 +4,7 @@ export default class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '',
+      className: 'counter',
       count: 0
     }
     this.isPrime = this.isPrime.bind(this);

@@ -3,11 +3,13 @@
     //userType is a string, retrieved from DB on login based on user's level of admin privileges: admin, consultant, student;
       //used to determine which views a user has access to.
     //view is a string used to determine which view to render beneath the nav bar; defaults to 'home', changes when a nav button is selected
+
     <NavBar userType location view updateView/>
       //location is a string - 'timeline', 'dashboard', 'workspace' used to determine nav bar color
       //here, view determines which button receives darker shading indicating it is currently selected.
       //updateView is a function passed down from Main, to be passed down as a click handler for the Icon components.
         //when an icon is clicked, updateView updates 'view' in the Main component to the corresponding view.
+
       <HomeIcon updateView/>
       {
         (userType === 'admin')
@@ -21,9 +23,11 @@
         //newNotifications should be a boolean indicating if a user has new notifications;
         //determines whether the red 'new notification' icon appears
       <ProfileIcon profileImage updateView/>
+        //profileImage is a string of the link for a user's profile image
         <ProfileDropdown selected/>
           //selected is a boolean determining whether the dropdown is visible; changes when the Profile icon is clicked
-        //profileImage should be a string of the link to a user's profile image
+
+
     <Body view/>
       //if userType === 'admin' and view === 'home' render:
       <Timeline/>
